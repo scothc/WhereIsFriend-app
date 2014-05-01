@@ -24,7 +24,7 @@
              console.log("otherUserLat = "+data.latitude);
              console.log("otherUserLon = "+data.longitude);
              console.log("otherUserName = "+data.username);
-             console.log("theTime = "+data.formatted_Time);
+             console.log("theTime = "+data.formatted_time);
 
 
         },
