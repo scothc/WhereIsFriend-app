@@ -6,11 +6,12 @@ var map;
 var myLat;
 var myLon;
 var myUserId = "5";
-var scotUserId = "6";
-var scotLat=0;
-var scotLon=0;
-// var scotLat = "37.765120";
-// var scotLon = "-122.409350";
+var otherUserName = "unknown";
+var otherUserId = "6";
+var otherUserLat=0;
+var otherUserLon=0;
+// var otherUserLat = "37.765120";
+// var otherUserLon = "-122.409350";
 
 function initialize() {
   var mapOptions = {
@@ -81,7 +82,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
-function setMarker(user_id, lat, lon){
+function setMarker(user_name, lat, lon){
       
       var myLatlng = new google.maps.LatLng(lat,lon);
       // var mapOptions = {
@@ -99,7 +100,7 @@ function setMarker(user_id, lat, lon){
        {
       //   map: map,
       //   position: pos,
-         content: user_id
+         content: user_name
        }
       );
 
@@ -118,12 +119,12 @@ function postMyLocation(myLat, myLon, myUserId){
      data: {
          latitude:myLat,
          longitude:myLon,
-         user_id:myUserId   
+         user_name:myUserId   
      },
      success: function(data) {
          //console.log(data.username + " " + data.password);
          // console.log(data);
-        setMarker(myUserId, myLat, myLon);
+        //setMarker(myUserId, myLat, myLon);
      },
      error: function() {
          alert("There was an error updating my location");
@@ -131,16 +132,17 @@ function postMyLocation(myLat, myLon, myUserId){
     });
 }
 
-function getOtherUsersLocation(){
+function getLocation(id){
     $.ajax({
-        url: "http://54.187.144.176/search/6",
+        url: "http://54.187.144.176/search/"+id,
         type: "GET",
         success: function(data) {
-             scotLat = data.latitude;
-             scotLon = data.longitude;
+             otherUserLat = data.latitude;
+             otherUserLon = data.longitude;
+             otherUserName = data.username;
 
       // /**** set the marker***/
-            setMarker(scotUserId, scotLat, scotLon);
+            setMarker(otherUserName, otherUserLat, otherUserLon);
 
         },
         error: function() {
@@ -150,25 +152,26 @@ function getOtherUsersLocation(){
 }
 
 
-function refresh(){
+// function refresh(){
     
-  /**** POST my location ****/
-  postMyLocation(myLat, myLon, myUserId);
+//   /**** POST my location ****/
+//   postMyLocation(myLat, myLon, myUserId);
 
-  /**** Get othe users location ****/
-  getOtherUsersLocation();
-}
+//   /**** Get othe users location ****/
+//   getLocation();
+// }
 
 
 function postButton(){    
-  /**** POST my location ****/
-  postMyLocation(myLat, myLon, myUserId);
+    getLocation(myUserId);
+    /**** POST my location ****/
+    postMyLocation(myLat, myLon, myUserId);
 }      
 
 
 function getButton(){
   /**** Get othe users location ****/
-  getOtherUsersLocation();
+  getLocation(otherUserId);
 }
 
 
