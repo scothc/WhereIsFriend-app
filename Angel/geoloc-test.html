@@ -19,7 +19,7 @@
     // create map, marker, infowindow and geocoder objects
     var options = {
     zoom: 12,
-    center: new google.maps.LatLng(37.76, -122.45),
+    center: new google.maps.LatLng(37.76, -120.45),
     mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map(canvas, options);
@@ -67,13 +67,13 @@
     <body>
     <div id="map" style="width:450px;height:315px;border:1px solid #999;"></div>
     <form id="addressForm" style="margin:10px 0;">
-    <input name="address" size="60" value="San Francisco, CA, USA"><br/>
-    <input type="submit" value="Submit"/>
+      <input name="address" size="60" value="San Mateo, CA, USA"><br/>
+      <input type="submit" value="Submit"/>
     </form>
     <div style="font-family:'Lucida Console', Monaco, monospace;">
-    Lat: <input id="lat" disabled="disabled" /><br/>
-    Lng: <input id="long" disabled="disabled" /><br/>
-    Time: <input id="timeStamp" size="18" value="unable to get timestamp"disabled="disabled" /><br/>
+      Lat: <input id="lat" disabled="disabled" /><br/>
+      Lng: <input id="long" disabled="disabled" /><br/>
+      Time: <input id="timeStamp" size="18" value="unable to get timestamp"disabled="disabled" /><br/>
    
     </div>
     </body>
