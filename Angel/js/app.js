@@ -21,6 +21,7 @@ function initialize() {
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
+ 
   // Try HTML5 geolocation
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -28,31 +29,10 @@ function initialize() {
       myLat = position.coords.latitude;
       myLon = position.coords.longitude;
       var pos = new google.maps.LatLng(myLat, myLon);
-
-      // var infowindow = new google.maps.InfoWindow(
-      //  {
-      // //   map: map,
-      // //   position: pos,
-      //    content: 'ME'
-      //  }
-      // );
-
       map.setCenter(pos);
 
 
-      /**** Refresh ****/
-      //refresh();
-      $("#post").on("click", function(){
-          postButton();
-      });
 
-      $("#get").on("click", function(){
-          getButton();
-      });
-
-
-    /**** fill the inputs ***/
-      //fillInputs();
     }, function() {
       handleNoGeolocation(true);
     });
@@ -82,16 +62,18 @@ function handleNoGeolocation(errorFlag) {
 google.maps.event.addDomListener(window, 'load', initialize);
 
 
+      $("#post").on("click", function(){
+          postButton();
+      });
+
+      $("#get").on("click", function(){
+          getButton();
+      });
 
 function setMarker(user_name, lat, lon, theTime){
       
       var myLatlng = new google.maps.LatLng(lat,lon);
-      // var mapOptions = {
-      //   zoom: 4,
-      //   center: myLatlng
-      // }
-      // var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-      var marker = new google.maps.Marker({
+       var marker = new google.maps.Marker({
            position: myLatlng,
            map: map,
           // title: 'Hello World!'
@@ -101,7 +83,7 @@ function setMarker(user_name, lat, lon, theTime){
        {
       //   map: map,
       //   position: pos,
-         content: user_name + " " + theTime
+         content: user_name + "<br> " + theTime
        }
       );
 
@@ -155,14 +137,6 @@ function getLocation(id){
 }
 
 
-// function refresh(){
-    
-//   /**** POST my location ****/
-//   postMyLocation(myLat, myLon, myUserId);
-
-//   /**** Get othe users location ****/
-//   getLocation();
-// }
 
 
 function postButton(){    
@@ -179,12 +153,5 @@ function getButton(){
 }
 
 
-
-
-
-// function fillInputs(){
-//   $(".latitude").val(myLat);
-//   $(".longitude").val(myLon);
-// }
 
 
