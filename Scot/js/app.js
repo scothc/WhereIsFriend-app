@@ -5,12 +5,14 @@
 var map;
 var myLat;
 var myLon;
+var theTime;
 var myUserId = "6";
-var angelUserId = "5";
-var angelLat=0;
-var angelLon=0;
-// var scotLat = "37.765120";
-// var scotLon = "-122.409350";
+var otherUserName = "unknown";
+var otherUserId = "5";
+var otherUserLat=0;
+var otherUserLon=0;
+// var otherUserLat = "37.765120";
+// var otherUserLon = "-122.409350";
 
 function initialize() {
   var mapOptions = {
@@ -62,7 +64,7 @@ function initialize() {
 
 function handleNoGeolocation(errorFlag) {
   if (errorFlag) {
-    var content = 'Error: Geolocation service failed.';
+    var content = 'Error: The Geolocation service failed.';
   } else {
     var content = 'Error: Your browser does not support geolocation.';
   }
@@ -81,7 +83,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
-function setMarker(user_id, lat, lon){
+function setMarker(user_name, lat, lon, theTime){
       
       var myLatlng = new google.maps.LatLng(lat,lon);
       // var mapOptions = {
@@ -99,7 +101,7 @@ function setMarker(user_id, lat, lon){
        {
       //   map: map,
       //   position: pos,
-         content: user_id
+         content: user_name + "</br> " + theTime
        }
       );
 
@@ -123,7 +125,8 @@ function postMyLocation(myLat, myLon, myUserId){
      success: function(data) {
          //console.log(data.username + " " + data.password);
          // console.log(data);
-        setMarker(myUserId, myLat, myLon);
+        //setMarker(myUserId, myLat, myLon);
+        getLocation(myUserId);
      },
      error: function() {
          alert("There was an error updating my location");
@@ -131,16 +134,18 @@ function postMyLocation(myLat, myLon, myUserId){
     });
 }
 
-function getOtherUsersLocation(){
+function getLocation(id){
     $.ajax({
-        url: "http://54.187.144.176/search/5",
+        url: "http://54.187.144.176/search/"+id,
         type: "GET",
         success: function(data) {
-             angelLat = data.latitude;
-             angelLon = data.longitude;
+             otherUserLat = data.latitude;
+             otherUserLon = data.longitude;
+             otherUserName = data.username;
+             theTime = data.formatted_time;
 
       // /**** set the marker***/
-            setMarker(angelUserId, angelLat, angelLon);
+            setMarker(otherUserName, otherUserLat, otherUserLon, theTime);
 
         },
         error: function() {
@@ -150,25 +155,27 @@ function getOtherUsersLocation(){
 }
 
 
-function refresh(){
+// function refresh(){
     
-  /**** POST my location ****/
-  postMyLocation(myLat, myLon, myUserId);
+//   /**** POST my location ****/
+//   postMyLocation(myLat, myLon, myUserId);
 
-  /**** Get othe users location ****/
-  getOtherUsersLocation();
-}
+//   /**** Get othe users location ****/
+//   getLocation();
+// }
 
 
 function postButton(){    
-  /**** POST my location ****/
-  postMyLocation(myLat, myLon, myUserId);
+    /**** POST my location ****/
+    postMyLocation(myLat, myLon, myUserId);
+
+
 }      
 
 
 function getButton(){
   /**** Get othe users location ****/
-  getOtherUsersLocation();
+  getLocation(otherUserId);
 }
 
 

@@ -1,19 +1,43 @@
 /****Create a New User***/
-$.ajax({
-	url: "http://54.187.144.176/user",
-	type: "GET",
-	// data: {
-	// 	username:"Pepe",
-	// 	pasword:"pepe"
-	// },
-	success: function(data) {
-		//console.log(data.username + " " + data.password);
-		console.log(data);
-	},
-	error: function() {
-		alert("Something went wrong");
-	}
-});
+// $.ajax({
+// 	url: "http://54.187.144.176/user",
+// 	type: "GET",
+// 	// data: {
+// 	// 	username:"Pepe",
+// 	// 	pasword:"pepe"
+// 	// },
+// 	success: function(data) {
+// 		//console.log(data.username + " " + data.password);
+// 		console.log(data);
+// 	},
+// 	error: function() {
+// 		alert("Something went wrong");
+// 	}
+// });
+
+
+
+    $.ajax({
+        url: "http://54.187.144.176/search/"+6,
+        type: "GET",
+        success: function(data) {
+             console.log("otherUserLat = "+data.latitude);
+             console.log("otherUserLon = "+data.longitude);
+             console.log("otherUserName = "+data.username);
+             console.log("theTime = "+data.formatted_Time);
+
+
+        },
+        error: function() {
+            alert("There was an error getting the other users location");
+        }
+    });
+
+
+
+
+
+
 
 /****Update a New User***/
 // $.ajax({
