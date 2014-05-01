@@ -5,6 +5,7 @@
 var map;
 var myLat;
 var myLon;
+var theTime;
 var myUserId = "5";
 var otherUserName = "unknown";
 var otherUserId = "6";
@@ -82,7 +83,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
-function setMarker(user_name, lat, lon){
+function setMarker(user_name, lat, lon, theTime){
       
       var myLatlng = new google.maps.LatLng(lat,lon);
       // var mapOptions = {
@@ -100,7 +101,7 @@ function setMarker(user_name, lat, lon){
        {
       //   map: map,
       //   position: pos,
-         content: user_name
+         content: user_name + " " + theTime
        }
       );
 
@@ -119,12 +120,13 @@ function postMyLocation(myLat, myLon, myUserId){
      data: {
          latitude:myLat,
          longitude:myLon,
-         user_name:myUserId   
+         user_id:myUserId   
      },
      success: function(data) {
          //console.log(data.username + " " + data.password);
          // console.log(data);
         //setMarker(myUserId, myLat, myLon);
+        getLocation(myUserId);
      },
      error: function() {
          alert("There was an error updating my location");
@@ -140,9 +142,10 @@ function getLocation(id){
              otherUserLat = data.latitude;
              otherUserLon = data.longitude;
              otherUserName = data.username;
+             theTime = data.formatted_time;
 
       // /**** set the marker***/
-            setMarker(otherUserName, otherUserLat, otherUserLon);
+            setMarker(otherUserName, otherUserLat, otherUserLon, theTime);
 
         },
         error: function() {
@@ -163,9 +166,10 @@ function getLocation(id){
 
 
 function postButton(){    
-    getLocation(myUserId);
     /**** POST my location ****/
     postMyLocation(myLat, myLon, myUserId);
+
+
 }      
 
 
