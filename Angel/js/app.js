@@ -46,15 +46,21 @@ $(document).ready(function() {
     });
   });
 
-// LOGIC FOR THE NEW USER BUTTON
+// LOGIC FOR THE NEW USER BUTTON (login-page)
   $("#login-page #btnNewUser").on("click", function(){
     $.mobile.changePage("#new-user-page");
   });
 
-// 
+// LOGIC FOR THE REGISTER BUTTON (new-user-page)
 
 
+// LOGIC FOR THE BACK BUTTON (new-user-page)
+  $("#new-user-page #btnBack").on("click", function(){
+    $.mobile.changePage("#login-page");
+  });
 
+// LOGIC TO CHECK THE PASSWORD AND REPASSWORD ARE THE SAME (new-user-page)
+  //$()
 
 
   function initialize() {
