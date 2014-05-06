@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Validation of users</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head>
+  
+<body>
+  
+<div data-role="page" id="initiation">
+  
+<div data-role="header">
+<h1>User Authentication</h1>
+</div>
+<div data-role="content"> 
+<form id="form" >
+<label> user </label>
+<input type="text" id="username" name="username">
+<label> Password </label>
+<input type="password" id="passwrd" name="passwrd" >
+  
+<input type="submit" value="Login" id="loginbutton">
+</form>   
+</div>
+</div>
+<div data-role="page" id="home">
+  
+<div data-role="header">
+<h1>Welcome</h1>
+</div>
+  
+<div data-role="content"> 
+<h2> Welcome to the application </h2>
+<h3> Its user and password validation</h3>
+</div>
+  
+</div>
+  
+<script>
+  
+$('#form').submit(function() {
+// Collects the values ​​that the user insert
+var userdata = $("#username").val()
+var passwordData = $("#passwrd").val()
+var Validationfile = "https://toontuts/phonegap/validationForm/validationData.php?jsoncallback=?"
+  
+$.getJSON( Validationfile, { user:userdata ,password:passwordData})
+.done(function(ServerResponse) {
+alert(ServerResponse.message + "\nGenerated en: " + ServerResponse.minute + "\n" +ServerResponse.generator)
+if(ServerResponse.validation == "ok"){
+/// If the validation is successful, displays the "home" screen
+$.mobile.changePage("#home")
+}else{
+/// Execute a behavior when validation fails
+}
+})
+return false;
+})
+</script>
+  
+</body>
+</html>
