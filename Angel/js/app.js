@@ -18,13 +18,42 @@ $(document).ready(function() {
   // var otherUserLat = "37.765120";
   // var otherUserLon = "-122.409350";
 
-  $("#index #loginbutton").on("click", function(){
-    var msg = $("#index #username").val();
-    alert(msg);
+// LOGIC FOR THE LOGIN BUTTON
+  $("#login-page #btnLogin").on("click", function(){
+    var user = $("#login-page #username").val();
+    var pass = $("#login-page #passwrd").val();
 
-
-
+    /****Authenticate a User****/
+    $.ajax({
+       url: "http://54.187.144.176/user/auth",
+       type: "POST",
+       data: {
+         username:user,
+         password:pass
+       },
+       success: function(data) {
+         //console.log(data.username + " " + data.password);
+         console.log(data);
+         if(data != "none"){
+          $.mobile.changePage("#map-page");
+         }else{
+          alert("User not authorized");
+         }
+       },
+       error: function() {
+         alert("Something went wrong");
+       }
+    });
   });
+
+// LOGIC FOR THE NEW USER BUTTON
+  $("#login-page #btnNewUser").on("click", function(){
+    $.mobile.changePage("#new-user-page");
+  });
+
+// 
+
+
 
 
 
