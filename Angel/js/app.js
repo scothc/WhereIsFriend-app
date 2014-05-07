@@ -52,6 +52,23 @@ $(document).ready(function() {
   });
 
 // LOGIC FOR THE REGISTER BUTTON (new-user-page)
+    var user = $("#new-user-page #username-n-u-p").val();
+    var pass1 = $("#new-user-page #passwrd-n-u-p").val();
+    var pass2 = $("#new-user-page #re-passwrd-n-u-p").val();
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // LOGIC FOR THE BACK BUTTON (new-user-page)
