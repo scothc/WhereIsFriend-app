@@ -1,7 +1,7 @@
 /****Create a New User***/
 // $.ajax({
 // 	url: "http://54.187.144.176/user",
-// 	type: "GET",
+// 	type: "POST",
 // 	// data: {
 // 	// 	username:"Pepe",
 // 	// 	pasword:"pepe"
@@ -15,33 +15,10 @@
 // 	}
 // });
 
-
-
-    $.ajax({
-        url: "http://54.187.144.176/search/"+5,
-        type: "GET",
-        success: function(data) {
-             console.log("otherUserLat = "+data.latitude);
-             console.log("otherUserLon = "+data.longitude);
-             console.log("otherUserName = "+data.username);
-             console.log("theTime = "+data.formatted_time);
-
-
-        },
-        error: function() {
-            alert("There was an error getting the othe users location");
-        }
-    });
-
-
-
-
-
-
-
 /****Update a New User***/
 // $.ajax({
-// 	url: "http://54.187.144.176/user/5",
+//  var user_id = 5
+// 	url: "http://54.187.144.176/user/" + user_id,
 // 	type: "PUT",
 // 	data: {
 // 		username:"Pepe",
@@ -121,20 +98,39 @@
 // 	}
 // });
 
-    // alert("getOtherUsersLocation");
-    // $.ajax({
-    //     url: "http://54.187.144.176/search/6",
-    //     type: "GET",
-    //     success: function(data) {
-    //         scotLat = data.latitude;
-    //         scotLon = data.longitude;
-    //         alert(scotLat + " " + scotLon);
+            // alert("getOtherUsersLocation");
+            // $.ajax({
+            //     url: "http://54.187.144.176/search/6",
+            //     type: "GET",
+            //     success: function(data) {
+            //         scotLat = data.latitude;
+            //         scotLon = data.longitude;
+            //         alert(scotLat + " " + scotLon);
 
-    //     },
-    //     error: function() {
-    //         alert("There was an error getting the othe users location");
-    //     }
-    // });
+            //     },
+            //     error: function() {
+            //         alert("There was an error getting the othe users location");
+            //     }
+            // });
+
+
+
+
+            // $.ajax({
+            //     url: "http://54.187.144.176/search/"+5,
+            //     type: "GET",
+            //     success: function(data) {
+            //          console.log("otherUserLat = "+data.latitude);
+            //          console.log("otherUserLon = "+data.longitude);
+            //          console.log("otherUserName = "+data.username);
+            //          console.log("theTime = "+data.formatted_time);
+
+
+            //     },
+            //     error: function() {
+            //         alert("There was an error getting the othe users location");
+            //     }
+            // });
 
 /****Delete a Location Entry****/
 // $.ajax({

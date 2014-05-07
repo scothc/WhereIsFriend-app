@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>WhereIsFriend-app</title>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <title>WhereIsFriend-app</title>
   <meta charset="utf-8">
 	<link rel="stylesheet" href="libraries/jquery-mobile/jquery.mobile-1.4.2.css">
 	<link rel="stylesheet" href="css/custom.css">
@@ -25,9 +25,50 @@
   	</div>
   </div> -->
 
-
 <!--  Index Page  -->
-  <div data-role="page" id="index">
+  <div data-role="page" id="login-page">
+    <div data-role="header">
+    </div>
+    <div data-role="content">
+      <form id="form" >
+        <label> user </label>
+        <input type="text" id="username" name="username">
+        <label> Password </label>
+        <input type="password" id="passwrd" name="passwrd" >
+          
+        <input type="button" value="Login" id="btnLogin">
+        <input type="button" value="New User" id="btnNewUser">
+      </form>   
+    </div>
+    <div data-role="footer">
+    </div>
+  </div>
+<!--  /Index Page  -->
+
+<!--  New User Page  -->
+  <div data-role="page" id="new-user-page">
+    <div data-role="header">
+    </div>
+    <div data-role="content">
+      <form id="form" >
+        <label> user </label>
+        <input type="text" id="username-n-u-p" name="username">
+        <label> Password </label>
+        <input type="password" id="passwrd-n-u-p" name="passwrd" >
+        <label> Re-enter the Password </label>
+        <input type="password" id="re-passwrd-n-u-p" name="re-passwrd" >
+          
+        <input type="button" value="Register" id="btnRegister">
+        <input type="button" value="Back" id="btnBack">
+      </form>   
+    </div>
+    <div data-role="footer">
+    </div>
+  </div>
+<!--  /New User Page  -->
+
+<!--  Map Page  -->
+  <div data-role="page" id="map-page">
 
 
   	<div data-role="header" data-theme="a">
@@ -62,7 +103,7 @@
   	</div>
 
   </div>
-<!--  /Index Page  -->
+<!--  /Map Page  -->
 
 
 <!--  Two Page  -->
