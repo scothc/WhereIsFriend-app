@@ -35,7 +35,9 @@ $(document).ready(function() {
        },
        success: function(data) {
          //console.log(data.username + " " + data.password);
-         console.log(data);
+          myUserId = data.id;
+          alert("myUserId = " + myUserId);
+         console.log(data.id);
          if(data != "none"){
           $.mobile.changePage("#map-page");
          }else{
@@ -43,7 +45,7 @@ $(document).ready(function() {
          }
        },
        error: function() {
-         alert("Something went wrong");
+         alert("Something went wrong in the authentication");
        }
     });
   });
@@ -150,11 +152,14 @@ $(document).ready(function() {
     map.setCenter(options.position);
   }
 
-  google.maps.event.addDomListener(window, 'load', initialize);
+ // google.maps.event.addDomListener(window, 'load', initialize);
+
+  $(document).on("pageshow", "#map-page", initialize);
 
 // POST BUTTON (map-page)
   $("#post").on("click", function(){
       //postButton();
+      alert ("lat= "+myLat+"\nlon="+myLon);
       postMyLocation(myLat, myLon, myUserId);
   });
 // GET BUTTON (map-page)
@@ -210,6 +215,7 @@ $(document).ready(function() {
   }
 
   function getLocation(userId){
+
       $.ajax({
           url: "http://54.187.144.176/search/"+userId,
           type: "GET",
