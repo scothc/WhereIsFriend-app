@@ -1,19 +1,19 @@
 /****Create a New User***/
-// $.ajax({
-// 	url: "http://54.187.144.176/user",
-// 	type: "POST",
-// 	// data: {
-// 	// 	username:"Pepe",
-// 	// 	pasword:"pepe"
-// 	// },
-// 	success: function(data) {
-// 		//console.log(data.username + " " + data.password);
-// 		console.log(data);
-// 	},
-// 	error: function() {
-// 		alert("Something went wrong");
-// 	}
-// });
+$.ajax({
+	url: "http://54.187.144.176/user",
+	type: "POST",
+	data: {
+		username:"Pepe",
+		password:"pepe"
+	},
+	success: function(data) {
+		//console.log(data.username + " " + data.password);
+		console.log(data);
+	},
+	error: function() {
+		alert("Something went wrong");
+	}
+});
 
 /****Update a New User***/
 // $.ajax({
@@ -38,8 +38,8 @@
 // 	url: "http://54.187.144.176/user/auth",
 // 	type: "POST",
 // 	data: {
-// 		username:"Pepe",
-// 		pasword:"pepe"
+// 		username:"Scot",
+// 		pasword:"scot"
 // 	},
 // 	success: function(data) {
 // 		//console.log(data.username + " " + data.password);

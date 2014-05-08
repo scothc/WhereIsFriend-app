@@ -6,3 +6,8 @@
   }
 
    /*       100%;  300px;       */
+
+.btn50 {
+	width: 45%;
+	float: left; 
+}
