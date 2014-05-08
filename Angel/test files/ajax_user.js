@@ -1,3 +1,26 @@
+/***Get all the data back***/
+$.ajax({
+   url: "http://54.187.144.176/all",
+   type: "GET",
+   success: function(data) {
+         console.log(data.length);
+         for(var i = 0; i<data.length; i++){
+           console.log("lat: "+data[i].latitude);
+           console.log("lon: "+data[i].longitude);
+           console.log("time: "+data[i].formatted_time);
+           console.log("user_id: "+data[i].user_id);
+           console.log("user_name: "+data[i].username);
+         }
+   },
+   error: function() {
+         alert("There was an error searching for a location");
+   }
+});
+
+
+
+
+
 /****Create a New User***/
 // $.ajax({
 // 	url: "http://54.187.144.176/user",
@@ -16,23 +39,23 @@
 // });
 
 /****Update a New User***/
-var user_id = 5;
-$.ajax({
+// var user_id = 5;
+// $.ajax({
       
-	url: "http://54.187.144.176/user/" + user_id,
-	type: "PUT",
-	data: {
-		username:"Angel",
-		password:"angel"
-	},
-	success: function(data) {
-		//console.log(data.username + " " + data.password);
-		console.log(data);
-	},
-	error: function() {
-		alert("Something went wrong");
-	}
-});
+// 	url: "http://54.187.144.176/user/" + user_id,
+// 	type: "PUT",
+// 	data: {
+// 		username:"Angel",
+// 		password:"angel"
+// 	},
+// 	success: function(data) {
+// 		//console.log(data.username + " " + data.password);
+// 		console.log(data);
+// 	},
+// 	error: function() {
+// 		alert("Something went wrong");
+// 	}
+// });
 
 
 

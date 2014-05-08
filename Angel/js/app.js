@@ -159,13 +159,31 @@ $(document).ready(function() {
 // POST BUTTON (map-page)
   $("#post").on("click", function(){
       //postButton();
-      alert ("lat= "+myLat+"\nlon="+myLon);
+      alert("lat= "+myLat+"\nlon="+myLon);
       postMyLocation(myLat, myLon, myUserId);
   });
 // GET BUTTON (map-page)
   $("#get").on("click", function(){
       //getButton();
-      getLocation(otherUserId);
+      $.ajax({
+         url: "http://54.187.144.176/all",
+         type: "GET",
+         success: function(data) {
+             console.log(data.length);
+             for(var i = 0; i<data.length; i++){
+               console.log("lat: "+data[i].latitude);
+               console.log("lon: "+data[i].longitude);
+               console.log("time: "+data[i].formatted_time);
+               console.log("user_id: "+data[i].user_id);
+               console.log("user_name: "+data[i].username);
+               getLocation(data[i].user_id);
+             }
+         },
+         error: function() {
+               alert("There was an error searching for a location");
+         }
+      });
+      //getLocation(otherUserId);
   });
 
   function setMarker(user_name, lat, lon, theTime){
@@ -238,18 +256,18 @@ $(document).ready(function() {
 
 
 
-  function postButton(){    
-      /**** POST my location ****/
-      postMyLocation(myLat, myLon, myUserId);
+  // function postButton(){    
+  //     /**** POST my location ****/
+  //     postMyLocation(myLat, myLon, myUserId);
 
 
-  }      
+  // }      
 
 
-  function getButton(){
-    /**** Get othe users location ****/
-    getLocation(otherUserId);
-  }
+  // function getButton(){
+  //   /**** Get othe users location ****/
+  //   getLocation(otherUserId);
+  // }
 
 
 
