@@ -18,7 +18,7 @@ $(document).ready(function() {
   // var otherUserLat = "37.765120";
   // var otherUserLon = "-122.409350";
 
-// LOGIC FOR THE LOGIN BUTTON
+// LOGIC FOR THE LOGIN BUTTON (login-page)
   $("#login-page #btnLogin").on("click", function(){
     var user = $("#login-page #username").val();
     var pass = $("#login-page #passwrd").val();
@@ -52,23 +52,40 @@ $(document).ready(function() {
   });
 
 // LOGIC FOR THE REGISTER BUTTON (new-user-page)
-    var user = $("#new-user-page #username-nup").val();
-    var pass1 = $("#new-user-page #passwrd-nup").val();
-    var pass2 = $("#new-user-page #re-passwrd-nup").val();
-    
+ $("#new-user-page #btnRegister").on("click", function(){
+     var user_nup = $("#new-user-page #username-nup").val();
+     var pass1_nup = $("#new-user-page #passwrd-nup").val();
+     var pass2_nup = $("#new-user-page #re-passwrd-nup").val();
+     if(pass1_nup === pass2_nup){
+       $.ajax({
+          url: "http://54.187.144.176/user",
+          type: "POST",
+          data: {
+            username:user_nup,
+            password:pass1_nup
+          },
+          success: function(data) {
+            //console.log(data.username + " " + data.password);
+            console.log(data);
+            alert("You account has been created \n" +
+                   "Please login with your new information \n" + 
+                   "username = " + user_nup + 
+                   "\npassword = " + pass1_nup);
+            $.mobile.changePage("#login-page");
+          },
+          error: function() {
+            alert("Something went wrong");
+          }
+        });
 
 
 
-
-
-
-
-
-
-
-
-
-
+     }else{
+      alert("The password is not matching");
+     }
+     
+       
+  });
 
 
 // LOGIC FOR THE BACK BUTTON (new-user-page)
