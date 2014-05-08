@@ -1,10 +1,29 @@
 /****Create a New User***/
+// $.ajax({
+// 	url: "http://54.187.144.176/user",
+// 	type: "POST",
+// 	data: {
+// 		username:"Pepe",
+// 		password:"pepe"
+// 	},
+// 	success: function(data) {
+// 		//console.log(data.username + " " + data.password);
+// 		console.log(data);
+// 	},
+// 	error: function() {
+// 		alert("Something went wrong");
+// 	}
+// });
+
+/****Update a New User***/
+var user_id = 5;
 $.ajax({
-	url: "http://54.187.144.176/user",
-	type: "POST",
+      
+	url: "http://54.187.144.176/user/" + user_id,
+	type: "PUT",
 	data: {
-		username:"Pepe",
-		password:"pepe"
+		username:"Angel",
+		password:"angel"
 	},
 	success: function(data) {
 		//console.log(data.username + " " + data.password);
@@ -15,23 +34,7 @@ $.ajax({
 	}
 });
 
-/****Update a New User***/
-// $.ajax({
-//  var user_id = 5
-// 	url: "http://54.187.144.176/user/" + user_id,
-// 	type: "PUT",
-// 	data: {
-// 		username:"Pepe",
-// 		pasword:"pepe"
-// 	},
-// 	success: function(data) {
-// 		//console.log(data.username + " " + data.password);
-// 		console.log(data);
-// 	},
-// 	error: function() {
-// 		alert("Something went wrong");
-// 	}
-// });
+
 
 /****Authenticate a User****/
 // $.ajax({
@@ -163,32 +166,6 @@ $.ajax({
 
 
 
-
-// $.ajax({
-// 	url: "http://daretodiscover.net/user/6",
-// 	type: "PUT",
-// 	data: {
-// 		firstname: "Arun 2",
-// 		lastname: "Sood 2",
-// 		age: 30
-// 	},
-// 	success: function(data) {
-// 		console.log(data);
-// 	}
-// });
-
-// $.ajax({
-// 	url: "http://daretodiscover.net/wine/16",
-// 	type: "DELETE",
-// 	success: function(data) {
-// 		console.log(data);
-// 	},
-// 	error: function() {
-// 		alert("Something went wrong")
-// 	}
-// });
-
-//setInterval(function(){alert("Hello")},3000);
 
 
 

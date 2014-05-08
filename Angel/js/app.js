@@ -3,6 +3,8 @@
 // is probably because you have denied permission for location sharing.
 
 
+                        //setInterval(function(){alert("Hello")},3000);
+
 $(document).ready(function() {
     
 
@@ -19,9 +21,9 @@ $(document).ready(function() {
   // var otherUserLon = "-122.409350";
 
 // LOGIC FOR THE LOGIN BUTTON (login-page)
-  $("#login-page #btnLogin").on("click", function(){
-    var user = $("#login-page #username").val();
-    var pass = $("#login-page #passwrd").val();
+  $("#btnLogin").on("click", function(){
+    var user = $("#username").val();
+    var pass = $("#passwrd").val();
 
     /****Authenticate a User****/
     $.ajax({
@@ -47,16 +49,20 @@ $(document).ready(function() {
   });
 
 // LOGIC FOR THE NEW USER BUTTON (login-page)
-  $("#login-page #btnNewUser").on("click", function(){
+  $("#btnNewUser").on("click", function(){
     $.mobile.changePage("#new-user-page");
   });
 
 // LOGIC FOR THE REGISTER BUTTON (new-user-page)
- $("#new-user-page #btnRegister").on("click", function(){
-     var user_nup = $("#new-user-page #username-nup").val();
-     var pass1_nup = $("#new-user-page #passwrd-nup").val();
-     var pass2_nup = $("#new-user-page #re-passwrd-nup").val();
+ $("#btnRegister").on("click", function(){
+     var user_nup = $("#username-nup").val();
+     var pass1_nup = $("#passwrd-nup").val();
+     var pass2_nup = $("#re-passwrd-nup").val();
      if(pass1_nup === pass2_nup){
+      // CHECK IF THE USERNAME IS ALREADY IN USE
+      // We will need to change the API to return all the user names
+
+      // CREATE A NEW USER
        $.ajax({
           url: "http://54.187.144.176/user",
           type: "POST",
@@ -89,7 +95,7 @@ $(document).ready(function() {
 
 
 // LOGIC FOR THE BACK BUTTON (new-user-page)
-  $("#new-user-page #btnBack").on("click", function(){
+  $("#btnBack").on("click", function(){
     $.mobile.changePage("#login-page");
   });
 
