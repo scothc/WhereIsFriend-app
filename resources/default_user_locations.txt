@@ -1,0 +1,74 @@
+[
+    {
+        "id": 264,
+        "latitude": 37.768943,
+        "longitude": -122.447972,
+        "created_at": "2014-05-08T14:11:59.392-07:00",
+        "updated_at": "2014-05-08T14:11:59.392-07:00",
+        "user_id": 7,
+        "username": "Sandy"
+    },
+    {
+        "id": 266,
+        "latitude": 37.741936,
+        "longitude": -122.422566,
+        "created_at": "2014-05-08T14:12:42.551-07:00",
+        "updated_at": "2014-05-08T14:12:42.551-07:00",
+        "user_id": 8,
+        "username": "Hannah"
+    },
+    {
+        "id": 267,
+        "latitude": 37.76105,
+        "longitude": -122.491443,
+        "created_at": "2014-05-08T14:13:19.251-07:00",
+        "updated_at": "2014-05-08T14:13:19.251-07:00",
+        "user_id": 9,
+        "username": "Pepe"
+    },
+    {
+        "id": 268,
+        "latitude": 37.789356,
+        "longitude": -122.408718,
+        "created_at": "2014-05-08T14:13:52.475-07:00",
+        "updated_at": "2014-05-08T14:13:52.475-07:00",
+        "user_id": 10,
+        "username": "Emily"
+    },
+    {
+        "id": 269,
+        "latitude": 37.782663,
+        "longitude": -122.409811,
+        "created_at": "2014-05-08T14:14:25.359-07:00",
+        "updated_at": "2014-05-08T14:14:25.359-07:00",
+        "user_id": 11,
+        "username": "Carmen"
+    },
+    {
+        "id": 270,
+        "latitude": 37.790224,
+        "longitude": -122.42379,
+        "created_at": "2014-05-08T14:14:52.388-07:00",
+        "updated_at": "2014-05-08T14:14:52.388-07:00",
+        "user_id": 12,
+        "username": "Jorge"
+    },
+    {
+        "id": 271,
+        "latitude": 37.790224,
+        "longitude": -122.42379,
+        "created_at": "2014-05-08T14:17:22.264-07:00",
+        "updated_at": "2014-05-08T14:17:22.264-07:00",
+        "user_id": 5,
+        "username": "Angel"
+    },
+    {
+        "id": 272,
+        "latitude": 37.790224,
+        "longitude": -122.42379,
+        "created_at": "2014-05-08T14:17:29.062-07:00",
+        "updated_at": "2014-05-08T14:17:29.062-07:00",
+        "user_id": 6,
+        "username": "Scot"
+    }
+]
