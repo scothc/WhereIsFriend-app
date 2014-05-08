@@ -11,7 +11,7 @@
     sensor (a GPS locator) to determine the user's location.
     See: https://developers.google.com/maps/documentation/javascript/tutorial#Loading_the_Maps_API
     -->
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+  <!--  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>     -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXYI981mBAwiB2SkHYhGJZnPxkpRY1Bpw&sensor=true&language=en"></script>
 </head>
 <body>
@@ -25,12 +25,12 @@
     </div>
   </div> -->
 
-<!--  Index Page  -->
-  <div data-role="page" id="login-page">                <!--  Index Page  -->
+<!--  Index Page  -->                                            <!--  Index Page  -->
+  <div data-role="page" id="login-page">
     <div data-role="header">
     </div>
     <div data-role="content">
-      <form id="form" >
+      <form id="form1" >
         <label> user </label>
         <input type="text" id="username" name="username">
         <label> Password </label>
@@ -45,12 +45,12 @@
   </div>
 <!--  /Index Page  -->
 
-<!--  New User Page  -->
-  <div data-role="page" id="new-user-page">                <!--  New User Page  -->
+<!--  New User Page  -->                                        <!--  New User Page  -->
+  <div data-role="page" id="new-user-page">
     <div data-role="header">
     </div>
     <div data-role="content">
-      <form id="form" >
+      <form id="form2" >
         <label> user </label>
         <input type="text" id="username-nup" name="username">
         <label> Password </label>
@@ -67,30 +67,25 @@
   </div>
 <!--  /New User Page  -->
 
-<!--  Map Page  -->
-  <div data-role="page" id="map-page">                    <!--  Map Page  -->
+<!--  Map Page  -->                                                    <!--  Map Page  -->
+  <div data-role="page" id="map-page">
 
 
     <div data-role="header" data-theme="a">
-<!--       <div data-role="fieldcontain">
-          <label for="name">Your latitud is:</label>
-          <input class="latitude" type="text" name="name" id="name" value=""  />
-      </div>  
-      <div data-role="fieldcontain">
-          <label for="name">Your longitud is:</label>
-          <input class="longitude" type="text" name="name" id="name" value=""  />
-      </div>  -->
+
     </div>
 
 
     <div data-role="content">
-      <div id="map-canvas"></div> 
-      <div class="btn50">
-        <a data-role="button" id="post">POST</a>
-      </div> 
-      <div class="btn50">
-        <a data-role="button" id="get">GET</a>
-      </div> 
+      <div id="map-container"><div id="map-canvas"></div> </div>
+      <div id="container50">
+        <div class="btn50">
+          <a data-role="button" id="post">POST</a>
+        </div> 
+        <div class="btn50">
+          <a data-role="button" id="get">GET</a>
+        </div> 
+      </div>
     </div>
 
 

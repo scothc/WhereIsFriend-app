@@ -12,7 +12,7 @@ $(document).ready(function() {
   var myLat;
   var myLon;
   var theTime;
-  var myUserId = "5";
+  var myUserId; //= "5";
   var otherUserName = "unknown";
   var otherUserId = "6";
   var otherUserLat=0;
@@ -77,6 +77,8 @@ $(document).ready(function() {
                    "Please login with your new information \n" + 
                    "username = " + user_nup + 
                    "\npassword = " + pass1_nup);
+            myUserId = data.id;
+            alert("myUserId = " + myUserId);
             $.mobile.changePage("#login-page");
           },
           error: function() {
@@ -150,14 +152,16 @@ $(document).ready(function() {
 
   google.maps.event.addDomListener(window, 'load', initialize);
 
-
-        $("#post").on("click", function(){
-            postButton();
-        });
-
-        $("#get").on("click", function(){
-            getButton();
-        });
+// POST BUTTON (map-page)
+  $("#post").on("click", function(){
+      //postButton();
+      postMyLocation(myLat, myLon, myUserId);
+  });
+// GET BUTTON (map-page)
+  $("#get").on("click", function(){
+      //getButton();
+      getLocation(otherUserId);
+  });
 
   function setMarker(user_name, lat, lon, theTime){
         
@@ -205,9 +209,9 @@ $(document).ready(function() {
       });
   }
 
-  function getLocation(id){
+  function getLocation(userId){
       $.ajax({
-          url: "http://54.187.144.176/search/"+id,
+          url: "http://54.187.144.176/search/"+userId,
           type: "GET",
           success: function(data) {
                otherUserLat = data.latitude;
@@ -220,7 +224,7 @@ $(document).ready(function() {
 
           },
           error: function() {
-              alert("There was an error getting the othe users location");
+              alert("There was an error getting the other users location");
           }
       });
   }
