@@ -4,8 +4,8 @@
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <title>WhereIsFriend-app</title>
   <meta charset="utf-8">
-	<link rel="stylesheet" href="libraries/jquery-mobile/jquery.mobile-1.4.2.css">
-	<link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="libraries/jquery-mobile/jquery.mobile-1.4.2.css">
+  <link rel="stylesheet" href="css/custom.css">
   <!--
     Include the maps javascript with sensor=true because this code is using a
     sensor (a GPS locator) to determine the user's location.
@@ -17,16 +17,16 @@
 <body>
 
 <!--   <div data-role="page">
-  	<div data-role="header">
-  	</div>
-  	<div data-role="content">
-  	</div>
-  	<div data-role="footer">
-  	</div>
+    <div data-role="header">
+    </div>
+    <div data-role="content">
+    </div>
+    <div data-role="footer">
+    </div>
   </div> -->
 
 <!--  Index Page  -->
-  <div data-role="page" id="login-page">
+  <div data-role="page" id="login-page">                <!--  Index Page  -->
     <div data-role="header">
     </div>
     <div data-role="content">
@@ -46,17 +46,17 @@
 <!--  /Index Page  -->
 
 <!--  New User Page  -->
-  <div data-role="page" id="new-user-page">
+  <div data-role="page" id="new-user-page">                <!--  New User Page  -->
     <div data-role="header">
     </div>
     <div data-role="content">
       <form id="form" >
         <label> user </label>
-        <input type="text" id="username-n-u-p" name="username">
+        <input type="text" id="username-nup" name="username">
         <label> Password </label>
-        <input type="password" id="passwrd-n-u-p" name="passwrd" >
+        <input type="password" id="passwrd-nup" name="passwrd" >
         <label> Re-enter the Password </label>
-        <input type="password" id="re-passwrd-n-u-p" name="re-passwrd" >
+        <input type="password" id="re-passwrd-nup" name="re-passwrd" >
           
         <input type="button" value="Register" id="btnRegister">
         <input type="button" value="Back" id="btnBack">
@@ -68,10 +68,10 @@
 <!--  /New User Page  -->
 
 <!--  Map Page  -->
-  <div data-role="page" id="map-page">
+  <div data-role="page" id="map-page">                    <!--  Map Page  -->
 
 
-  	<div data-role="header" data-theme="a">
+    <div data-role="header" data-theme="a">
 <!--       <div data-role="fieldcontain">
           <label for="name">Your latitud is:</label>
           <input class="latitude" type="text" name="name" id="name" value=""  />
@@ -80,27 +80,30 @@
           <label for="name">Your longitud is:</label>
           <input class="longitude" type="text" name="name" id="name" value=""  />
       </div>  -->
-  	</div>
+    </div>
 
 
-  	<div data-role="content">
+    <div data-role="content">
       <div id="map-canvas"></div> 
-      <a data-role="button" id="post">POST</a>
-      <a data-role="button" id="get">GET</a>
+      <div class="btn50">
+        <a data-role="button" id="post">POST</a>
+      </div> 
+      <div class="btn50">
+        <a data-role="button" id="get">GET</a>
+      </div> 
+    </div>
 
-  	</div>
 
-
-  	<div data-role="footer" data-position="fixed">
- <!--  		<div data-role="navbar">
-  			<ul>
-  			<li><a href="#index" data-icon="forbidden">One</a></li>
-  			<li><a href="#two" data-icon="refresh" data-transition="slide">Two</a></li>
-  			<li><a href="#three" data-icon="star">Three</a></li>
-  			<li><a href="#" data-icon="tag">Four</a></li>
-  		</ul>
-  		</div> -->
-  	</div>
+    <div data-role="footer" data-position="fixed">
+ <!--     <div data-role="navbar">
+        <ul>
+        <li><a href="#index" data-icon="forbidden">One</a></li>
+        <li><a href="#two" data-icon="refresh" data-transition="slide">Two</a></li>
+        <li><a href="#three" data-icon="star">Three</a></li>
+        <li><a href="#" data-icon="tag">Four</a></li>
+      </ul>
+      </div> -->
+    </div>
 
   </div>
 <!--  /Map Page  -->
@@ -109,23 +112,23 @@
 <!--  Two Page  -->
   <div data-role="page" id="two">
 
-  	<div data-role="header">
-  		<h2>Page Two</h2>
-  	</div>
+    <div data-role="header">
+      <h2>Page Two</h2>
+    </div>
 
-  	<div data-role="content">
-  	</div>
+    <div data-role="content">
+    </div>
 
-  	<div data-role="footer" data-position="fixed">
-  		<div data-role="navbar">
-  			<ul>
-  			<li><a href="#index" data-icon="forbidden">One</a></li>
-  			<li><a href="#two" data-icon="refresh">Two</a></li>
-  			<li><a href="#three" data-icon="star">Three</a></li>
-  			<li><a href="#" data-icon="tag">Four</a></li>
-  		</ul>
-  		</div>
-  	</div>
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+        <li><a href="#index" data-icon="forbidden">One</a></li>
+        <li><a href="#two" data-icon="refresh">Two</a></li>
+        <li><a href="#three" data-icon="star">Three</a></li>
+        <li><a href="#" data-icon="tag">Four</a></li>
+      </ul>
+      </div>
+    </div>
 
   </div>
 <!--  /Two Page  -->
