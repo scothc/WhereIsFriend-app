@@ -14,6 +14,7 @@
 \f1\fs38 \cf0 \'a0{\field{\*\fldinst{HYPERLINK "http://54.187.144.176/"}}{\fldrslt http://54.187.144.176/}}.\
 
 \f0\fs36 \cf2 \
+\
 \pard\pardeftab720\sl500\sa300
 \cf2 There are two use cases for this API - manage users and retrieve and manage user locations. API can be found at 
 \f2 \cb3 http://54.187.144.176
@@ -66,8 +67,16 @@ If username already exists, api returns JSON object
 
 \f2\b0 \cf0 DELETE
 \f3  request to 
-\f2 /user/:id
-\f3 \
+\f2 /user/:id\
+\pard\pardeftab720\sa298
+
+\f3\b \cf0 Retrieve List of all Users\
+\pard\pardeftab720\sa240
+
+\f2\b0 \cf0 GET
+\f3  request to 
+\f2 /all
+\f3  returns username, latitude, longitude, user_id for all users in the database\
 \pard\pardeftab720\sa298
 
 \b \cf0 Create a New Location Entry\
